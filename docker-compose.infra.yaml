@@ -14,17 +14,6 @@ services:
       start_period: 5s
     restart: always
 
-  redis:
-    # Redis is limited to 7.2-bookworm due to licencing change
-    # https://redis.io/blog/redis-adopts-dual-source-available-licensing/
-    image: redis:7.2-bookworm
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 10s
-      retries: 5
-      start_period: 5s
-    restart: always
-
   pgadmin:
     image: dpage/pgadmin4
     environment:
