@@ -1,0 +1,49 @@
+name: Wilson
+age: 49
+skills:
+  - Python
+  - Java script
+
+#anchors and aliases
+defaults: &defaults
+  region: eastus
+  retries: 3
+  timeout: 30
+
+service-a:
+  <<: *defaults
+  service_name: order-api
+
+#merge keys <<:
+
+base: &base
+  cpu: 4
+  memory: 16GB
+
+high-memory:
+  <<: *base
+  memory: 64GB
+
+user:
+  - name: Alice
+    roles: [admin, supervisor]
+  - name: Wilson
+    age: 34
+    date: 2026-09-06
+    float_value: 9.99
+    version: 1.0.0
+    debug: true
+
+team: 76ers
+city: Philadelphia
+year_founded: 1946
+is_current_champion: false
+background: > 
+  Administration, development and monitoring for PostgreSQL. 
+  Desktop or server mode, on Windows, macOS, Linux and in containers. 
+  Open source, and maintained by the people who use it.
+
+organization_history: |
+  Administration, development and monitoring for PostgreSQL. 
+  Desktop or server mode, on Windows, macOS, Linux and in containers. 
+  Open source, and maintained by the people who use it.

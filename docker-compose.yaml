@@ -1,0 +1,3 @@
+include:
+  - docker-compose.infra.yaml
+  - docker-compose.airflow.yaml
